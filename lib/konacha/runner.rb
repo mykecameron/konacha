@@ -57,7 +57,7 @@ module Konacha
 
     def json_events
       events = nil
-      Timeout::timeout(10) do
+      Timeout::timeout(45) do
         until events = session.evaluate_script('window.top.Konacha.getEvents()')
           sleep 0.1
         end
